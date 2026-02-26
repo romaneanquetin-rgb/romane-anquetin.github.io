@@ -9,10 +9,10 @@
     :root {
       --navy: #1a2744;
       --accent: #b5451b;
-      --light-bg: #f7f5f0;
+      --light-bg: #ffffff;
       --text: #2c2c2c;
       --muted: #6b6b6b;
-      --border: #ddd8cc;
+      --border: #e0ddd8;
       --sidebar-width: 315px;
     }
 
@@ -20,26 +20,35 @@
 
     body {
       font-family: 'DM Sans', sans-serif;
-      background: var(--light-bg);
+      background: #ffffff;
       color: var(--text);
       display: flex;
       min-height: 100vh;
+      align-items: flex-start;
+    }
+
+    /* ── SIDEBAR WRAPPER ── */
+    #sidebar-wrapper {
+      width: calc(var(--sidebar-width) + 40px);
+      min-width: calc(var(--sidebar-width) + 40px);
+      padding: 32px 20px 32px 20px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
     }
 
     /* ── SIDEBAR ── */
     #sidebar {
-      width: var(--sidebar-width);
-      min-width: var(--sidebar-width);
+      width: 100%;
       background: var(--navy);
       color: #e8e4dc;
       padding: 48px 28px 40px;
       display: flex;
       flex-direction: column;
       gap: 28px;
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      overflow-y: auto;
+      border-radius: 12px;
+      min-height: calc(100vh - 64px);
     }
 
     #sidebar img.photo {
@@ -161,8 +170,8 @@
     .pub-entry:last-child { border-bottom: none; }
 
     .pub-entry .pub-title {
-      font-family: 'EB Garamond', serif;
-      font-size: 1.05rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
       font-weight: 500;
       color: var(--navy);
       margin-bottom: 4px;
@@ -254,7 +263,8 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       body { flex-direction: column; }
-      #sidebar { width: 100%; position: relative; height: auto; }
+      #sidebar-wrapper { width: 100%; height: auto; position: relative; padding: 16px; }
+      #sidebar { min-height: unset; border-radius: 8px; }
       #main { padding: 32px 24px; }
     }
   </style>
@@ -262,6 +272,7 @@
 <body>
 
 <!-- ════════════════ SIDEBAR ════════════════ -->
+<div id="sidebar-wrapper">
 <aside id="sidebar">
 
   <!-- To add your photo, replace the div below with:
@@ -284,12 +295,13 @@
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
     <a href="#work-in-progress">Work in Progress</a>
-    <a href="#awards">Presentations</a>
     <a href="#teaching">Teaching</a>
+    <a href="#awards">Presentations</a>
   </nav>
 
 
 </aside>
+</div>
 
 <!-- ════════════════ MAIN CONTENT ════════════════ -->
 <main id="main">
@@ -318,7 +330,7 @@
     <h2>Contact</h2>
     <p>
       <strong>Email:</strong>
-      <a href="mailto:romane.anquetin@assas-universite.fr">romane.anquetin@assas-universite.fr</a>
+      <a href="/cdn-cgi/l/email-protection#addfc2c0ccc3c883ccc3dcd8c8d9c4c3edccdedeccde80d8c3c4dbc8dfdec4d9c883cbdf"><span class="__cf_email__" data-cfemail="592b363438373c773837282c3c2d303719382a2a382a742c37302f3c2b2a302d3c773f2b">[email&#160;protected]</span></a>
     </p>
     <p>
       <strong>Address:</strong><br>
@@ -393,9 +405,4 @@
     </div>
 
     <div class="award-entry">
-      <div class="award-title">CRED-LEMMA PhD Seminar</div>
-      <div class="award-meta">Paris, France, 2025</div>
-    </div>
-
-    <div class="award-entry">
-      <div class="award-t
+      <div class
