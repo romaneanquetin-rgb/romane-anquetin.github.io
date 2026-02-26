@@ -13,7 +13,7 @@
       --text: #2c2c2c;
       --muted: #6b6b6b;
       --border: #ddd8cc;
-      --sidebar-width: 260px;
+      --sidebar-width: 315px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -266,7 +266,7 @@
 
   <!-- To add your photo, replace the div below with:
        <img class="photo" src="photo.jpg" alt="Romane Anquetin"> -->
-  <img class="photo" src="photo.jpeg" alt="Romane Anquetin">
+  <div class="placeholder-photo">👤</div>
 
   <h1>Romane Anquetin</h1>
 
@@ -282,18 +282,12 @@
 
   <nav>
     <a href="#about">About</a>
+    <a href="#contact">Contact</a>
     <a href="#work-in-progress">Work in Progress</a>
-    <a href="#teaching">Teaching</a>
     <a href="#awards">Presentations</a>
+    <a href="#teaching">Teaching</a>
   </nav>
 
-  <div class="contact-links">
-    <a href="mailto:romane.anquetin@assas-universite.fr">✉ romane.anquetin@assas-universite.fr</a>
-    <a style="pointer-events:none; cursor:default;">📍 CRED, Paris-Panthéon-Assas<br>&nbsp;&nbsp;&nbsp;&nbsp;Paris, France</a>
-    <!-- To add your CV, upload a file named "CV_Anquetin.pdf" to GitHub, then uncomment the line below -->
-    <!-- <a href="CV_Anquetin.pdf" target="_blank">📄 Curriculum Vitae</a> -->
-    <!-- <a href="https://scholar.google.com/..." target="_blank">🎓 Google Scholar</a> -->
-  </div>
 
 </aside>
 
@@ -319,6 +313,21 @@
     </p>
   </section>
 
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      <strong>Email:</strong>
+      <a href="mailto:romane.anquetin@assas-universite.fr">romane.anquetin@assas-universite.fr</a>
+    </p>
+    <p>
+      <strong>Address:</strong><br>
+      Paris Center for Law and Economics (CRED)<br>
+      Paris-Panthéon-Assas University<br>
+      Paris, France
+    </p>
+  </section>
+
   <!-- ── WORK IN PROGRESS ── -->
   <section id="work-in-progress">
     <h2>Work in Progress</h2>
@@ -326,7 +335,7 @@
     <div class="pub-entry">
       <div class="pub-title">When Eligibility is Not Enough: Lessons from France's Energy Voucher Policy</div>
       <div class="pub-note">Draft available — <a href="energy-voucher.pdf" target="_blank" style="color: var(--accent);">PDF</a></div>
-      <div class="pub-note" style="color: var(--muted); font-weight: 400;">🏆 <a href="https://www.faee.fr/en/2/id/109" target="_blank" style="color: var(--muted);">Best PhD Paper Award</a> — FAEE PhD Students Workshop, Grenoble, 2025</div>
+      <div class="pub-note" style="color: var(--muted); font-weight: 400;"><a href="https://www.faee.fr/en/2/id/109" target="_blank" style="color: var(--muted);">Best PhD Paper Award</a> — FAEE PhD Students Workshop, Grenoble, 2025</div>
       <button class="abstract-toggle" onclick="this.nextElementSibling.classList.toggle('open'); this.textContent = this.nextElementSibling.classList.contains('open') ? 'Hide abstract' : 'Show abstract'">Show abstract</button>
       <div class="abstract-text">
         Incomplete take-up persists in means-tested programs, even when benefits are allocated automatically. This paper examines why eligible households do not use the energy voucher in France, which is sent directly to beneficiaries. The results show that the determinants of non-take-up differ across the income distribution through two effects. Among modest-income households, non-use is driven by a size effect. Take-up increases sharply when the voucher represents a larger share of household income, with a probability of use by up to 94 percentage points. Among the poorest households, non-use reflects a learning effect linked to administrative familiarity. Households who received the voucher the previous year are about 25 percentage points more likely to use it. Overall, take-up follows a non-linear pattern across income levels, reflecting the joint effect of administrative constraints and the relative value of the benefit.
@@ -335,39 +344,7 @@
 
   </section>
 
-
-
-  <!-- ── PRESENTATIONS ── -->
-  <section id="awards">
-    <h2>Presentations</h2>
-    <div class="award-entry">
-      <div class="award-title">FAEE PhD Students Workshop</div>
-      <div class="award-meta">French Association of Energy Economists — Grenoble, France, 2025</div>
-    </div>
-
-    <div class="award-entry">
-      <div class="award-title">Poster — Law, Economics, and Regulation Conference</div>
-      <div class="award-meta">CRED-HEC — Paris, France, 2025</div>
-    </div>
-
-    <div class="award-entry">
-      <div class="award-title">Poster — CNRS Thematic School on Public Policy Evaluation</div>
-      <div class="award-meta">Aussois, France, 2025</div>
-    </div>
-
-    <div class="award-entry">
-      <div class="award-title">CRED-LEMMA PhD Seminar</div>
-      <div class="award-meta">Paris, France, 2025</div>
-    </div>
-
-    <div class="award-entry">
-      <div class="award-title">German Institute for Economic Research (DIW)</div>
-      <div class="award-meta">Berlin, Germany, 2024</div>
-    </div>
-
-  </section>
-
-    <!-- ── TEACHING ── -->
+  <!-- ── TEACHING ── -->
   <section id="teaching">
     <h2>Teaching</h2>
     <p style="margin-bottom:18px; color: var(--muted); font-size:0.85rem;">
@@ -397,7 +374,28 @@
     </div>
   </section>
 
-</main>
+  <!-- ── PRESENTATIONS ── -->
+  <section id="awards">
+    <h2>Presentations</h2>
+    <div class="award-entry">
+      <div class="award-title">FAEE PhD Students Workshop</div>
+      <div class="award-meta">French Association of Energy Economists — Grenoble, France, 2025</div>
+    </div>
 
-</body>
-</html>
+    <div class="award-entry">
+      <div class="award-title">Poster — Law, Economics, and Regulation Conference</div>
+      <div class="award-meta">CRED-HEC — Paris, France, 2025</div>
+    </div>
+
+    <div class="award-entry">
+      <div class="award-title">Poster — CNRS Thematic School on Public Policy Evaluation</div>
+      <div class="award-meta">Aussois, France, 2025</div>
+    </div>
+
+    <div class="award-entry">
+      <div class="award-title">CRED-LEMMA PhD Seminar</div>
+      <div class="award-meta">Paris, France, 2025</div>
+    </div>
+
+    <div class="award-entry">
+      <div class="award-t
