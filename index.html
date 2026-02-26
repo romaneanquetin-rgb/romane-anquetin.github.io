@@ -4,22 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Romane Anquetin — Economist</title>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
+    /*
+      TYPOGRAPHY SYSTEM
+      ─────────────────
+      Serif  : Playfair Display  → h1, h2, section headings
+      Sans   : Source Sans 3     → everything else
+
+      4 sizes only:
+        --fs-xl   : 1.45rem  → h1, h2
+        --fs-md   : 0.95rem  → body text, pub-title
+        --fs-sm   : 0.82rem  → meta, abstract, sidebar bio, nav
+        --fs-xs   : 0.72rem  → tags, badges, small labels
+    */
+
     :root {
-      --navy: #1a2744;
-      --accent: #b5451b;
-      --light-bg: #ffffff;
-      --text: #2c2c2c;
-      --muted: #6b6b6b;
+      --navy:   #2c3e50;
+      --accent: #c0392b;
+      --text:   #2c2c2c;
+      --muted:  #6b6b6b;
       --border: #e0ddd8;
       --sidebar-width: 315px;
+
+      --fs-xl: 1.45rem;
+      --fs-md: 0.95rem;
+      --fs-sm: 0.82rem;
+      --fs-xs: 0.72rem;
+
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans:  'Source Sans 3', system-ui, sans-serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'DM Sans', sans-serif;
+      font-family: var(--sans);
+      font-size: var(--fs-md);
       background: #ffffff;
       color: var(--text);
       display: flex;
@@ -31,7 +52,7 @@
     #sidebar-wrapper {
       width: calc(var(--sidebar-width) + 40px);
       min-width: calc(var(--sidebar-width) + 40px);
-      padding: 32px 20px 32px 20px;
+      padding: 32px 20px;
       position: sticky;
       top: 0;
       height: 100vh;
@@ -61,31 +82,18 @@
       margin: 0 auto;
     }
 
-    #sidebar .placeholder-photo {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.1);
-      border: 3px solid rgba(255,255,255,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto;
-      font-size: 48px;
-      color: rgba(255,255,255,0.4);
-    }
-
     #sidebar h1 {
-      font-family: 'EB Garamond', serif;
-      font-size: 1.45rem;
-      font-weight: 500;
+      font-family: var(--serif);
+      font-size: var(--fs-xl);
+      font-weight: 600;
       text-align: center;
       color: #fff;
       line-height: 1.3;
     }
 
     #sidebar .position {
-      font-size: 0.8rem;
+      font-family: var(--sans);
+      font-size: var(--fs-sm);
       font-weight: 300;
       text-align: center;
       color: rgba(232,228,220,0.75);
@@ -93,7 +101,8 @@
     }
 
     #sidebar .shortbio {
-      font-size: 0.82rem;
+      font-family: var(--sans);
+      font-size: var(--fs-sm);
       line-height: 1.7;
       color: rgba(232,228,220,0.85);
       border-top: 1px solid rgba(255,255,255,0.1);
@@ -109,31 +118,16 @@
     }
 
     #sidebar nav a {
+      font-family: var(--sans);
       color: rgba(232,228,220,0.7);
       text-decoration: none;
-      font-size: 0.82rem;
+      font-size: var(--fs-sm);
       font-weight: 400;
       padding: 4px 0;
       transition: color 0.2s;
       letter-spacing: 0.02em;
     }
     #sidebar nav a:hover { color: #fff; }
-
-    #sidebar .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 20px;
-    }
-
-    #sidebar .contact-links a {
-      color: rgba(232,228,220,0.7);
-      text-decoration: none;
-      font-size: 0.8rem;
-      transition: color 0.2s;
-    }
-    #sidebar .contact-links a:hover { color: #fff; }
 
     /* ── MAIN CONTENT ── */
     #main {
@@ -145,9 +139,9 @@
     section { margin-bottom: 52px; }
 
     section h2 {
-      font-family: 'EB Garamond', serif;
-      font-size: 1.5rem;
-      font-weight: 500;
+      font-family: var(--serif);
+      font-size: var(--fs-xl);
+      font-weight: 600;
       color: var(--navy);
       border-bottom: 1px solid var(--border);
       padding-bottom: 8px;
@@ -155,11 +149,20 @@
     }
 
     section p {
-      font-size: 0.92rem;
+      font-family: var(--sans);
+      font-size: var(--fs-md);
       line-height: 1.85;
       color: var(--text);
       margin-bottom: 12px;
     }
+
+    section p a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    section p a:hover { border-color: var(--accent); }
 
     /* ── PUBLICATION ENTRY ── */
     .pub-entry {
@@ -170,48 +173,32 @@
     .pub-entry:last-child { border-bottom: none; }
 
     .pub-entry .pub-title {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 500;
+      font-family: var(--sans);
+      font-size: var(--fs-md);
+      font-weight: 600;
       color: var(--navy);
       margin-bottom: 4px;
     }
 
-    .pub-entry .pub-title a {
-      color: var(--navy);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s;
-    }
-    .pub-entry .pub-title a:hover { border-color: var(--accent); color: var(--accent); }
-
     .pub-entry .pub-note {
-      font-size: 0.82rem;
+      font-family: var(--sans);
+      font-size: var(--fs-sm);
       color: var(--accent);
       font-weight: 500;
       margin-bottom: 8px;
     }
 
-    .pub-entry .pub-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-
-    .pub-entry .pub-links a {
-      font-size: 0.78rem;
-      color: var(--navy);
-      border: 1px solid var(--border);
-      padding: 3px 10px;
-      border-radius: 3px;
+    .pub-entry .pub-note a {
+      color: var(--accent);
       text-decoration: none;
-      transition: all 0.2s;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
     }
-    .pub-entry .pub-links a:hover { background: var(--navy); color: #fff; }
+    .pub-entry .pub-note a:hover { border-color: var(--accent); }
 
     .abstract-toggle {
-      font-size: 0.78rem;
+      font-family: var(--sans);
+      font-size: var(--xs);
       color: var(--muted);
       cursor: pointer;
       background: none;
@@ -219,46 +206,54 @@
       padding: 0;
       text-decoration: underline;
       text-underline-offset: 3px;
+      font-size: var(--fs-xs);
     }
     .abstract-toggle:hover { color: var(--accent); }
 
     .abstract-text {
       display: none;
-      font-size: 0.82rem;
+      font-family: var(--sans);
+      font-size: var(--fs-sm);
       line-height: 1.75;
       color: var(--muted);
       margin-top: 10px;
       padding: 12px 16px;
-      background: #fff;
+      background: #fafafa;
       border-left: 3px solid var(--border);
       border-radius: 2px;
     }
     .abstract-text.open { display: block; }
 
-    /* ── TEACHING TABLE ── */
+    /* ── TEACHING ── */
     .teaching-entry {
       display: grid;
       grid-template-columns: 60px 1fr;
       gap: 4px 16px;
       margin-bottom: 10px;
-      font-size: 0.88rem;
+      font-family: var(--sans);
+      font-size: var(--fs-md);
     }
     .teaching-entry .year {
       color: var(--muted);
-      font-size: 0.8rem;
+      font-size: var(--fs-sm);
       padding-top: 2px;
     }
     .teaching-entry .course { color: var(--text); line-height: 1.5; }
-    .teaching-entry .course em { color: var(--muted); font-style: normal; font-size: 0.8rem; }
+    .teaching-entry .course em {
+      color: var(--muted);
+      font-style: normal;
+      font-size: var(--fs-sm);
+    }
 
     /* ── AWARD ENTRY ── */
     .award-entry {
       margin-bottom: 16px;
-      font-size: 0.88rem;
+      font-family: var(--sans);
+      font-size: var(--fs-md);
       line-height: 1.6;
     }
-    .award-entry .award-title { font-weight: 500; color: var(--navy); }
-    .award-entry .award-meta { color: var(--muted); font-size: 0.8rem; }
+    .award-entry .award-title { font-weight: 600; color: var(--navy); }
+    .award-entry .award-meta { color: var(--muted); font-size: var(--fs-sm); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
@@ -275,9 +270,7 @@
 <div id="sidebar-wrapper">
 <aside id="sidebar">
 
-  <!-- To add your photo, replace the div below with:
-       <img class="photo" src="photo.jpg" alt="Romane Anquetin"> -->
-  <div class="placeholder-photo">👤</div>
+  <img class="photo" src="photo.jpg" alt="Romane Anquetin">
 
   <h1>Romane Anquetin</h1>
 
@@ -288,17 +281,16 @@
   </p>
 
   <p class="shortbio">
-    I work on poverty, inequality, and energy policy using applied econometrics and behavioral economics.
+    Research fields: poverty, inequality, and energy policy using applied econometrics and behavioral economics.
   </p>
 
   <nav>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
     <a href="#work-in-progress">Work in Progress</a>
-    <a href="#teaching">Teaching</a>
     <a href="#awards">Presentations</a>
+    <a href="#teaching">Teaching</a>
   </nav>
-
 
 </aside>
 </div>
@@ -330,13 +322,13 @@
     <h2>Contact</h2>
     <p>
       <strong>Email:</strong>
-      <a href="/cdn-cgi/l/email-protection#addfc2c0ccc3c883ccc3dcd8c8d9c4c3edccdedeccde80d8c3c4dbc8dfdec4d9c883cbdf"><span class="__cf_email__" data-cfemail="592b363438373c773837282c3c2d303719382a2a382a742c37302f3c2b2a302d3c773f2b">[email&#160;protected]</span></a>
+      <a href="mailto:romane.anquetin@assas-universite.fr">romane.anquetin@assas-universite.fr</a>
     </p>
     <p>
       <strong>Address:</strong><br>
-      Paris Center for Law and Economics (CRED)<br>
-      Paris-Panthéon-Assas University<br>
-      Paris, France
+      Paris Research Center in Law and Economics (CRED)<br>
+      31 rue Froidevaux, Paris<br>
+      Paris-Panthéon-Assas University
     </p>
   </section>
 
@@ -346,10 +338,13 @@
 
     <div class="pub-entry">
       <div class="pub-title">When Eligibility is Not Enough: Lessons from France's Energy Voucher Policy</div>
-      <div class="pub-note">Draft available — <a href="energy-voucher.pdf" target="_blank" style="color: var(--accent);">PDF</a></div>
-      <div class="pub-note" style="color: var(--muted); font-weight: 400;"><a href="https://www.faee.fr/en/2/id/109" target="_blank" style="color: var(--muted);">Best PhD Paper Award</a> — FAEE PhD Students Workshop, Grenoble, 2025</div>
-      <button class="abstract-toggle" onclick="this.nextElementSibling.classList.toggle('open'); this.textContent = this.nextElementSibling.classList.contains('open') ? 'Hide abstract' : 'Show abstract'">Show abstract</button>
-      <div class="abstract-text">
+      <div class="pub-note">Draft available — <a href="energy-voucher.pdf" target="_blank">PDF</a></div>
+      <div class="pub-note" style="color: var(--muted); font-weight: 400;">
+        <a href="https://www.faee.fr/en/2/id/109" target="_blank" style="color: var(--muted);">Best PhD Paper Award</a>
+        — FAEE PhD Students Workshop, Grenoble, 2025
+      </div>
+      <button class="abstract-toggle" onclick="this.nextElementSibling.classList.toggle('open'); this.textContent = this.nextElementSibling.classList.contains('open') ? 'Hide abstract' : 'Show abstract'">Hide abstract</button>
+      <div class="abstract-text open">
         Incomplete take-up persists in means-tested programs, even when benefits are allocated automatically. This paper examines why eligible households do not use the energy voucher in France, which is sent directly to beneficiaries. The results show that the determinants of non-take-up differ across the income distribution through two effects. Among modest-income households, non-use is driven by a size effect. Take-up increases sharply when the voucher represents a larger share of household income, with a probability of use by up to 94 percentage points. Among the poorest households, non-use reflects a learning effect linked to administrative familiarity. Households who received the voucher the previous year are about 25 percentage points more likely to use it. Overall, take-up follows a non-linear pattern across income levels, reflecting the joint effect of administrative constraints and the relative value of the benefit.
       </div>
     </div>
@@ -359,7 +354,7 @@
   <!-- ── TEACHING ── -->
   <section id="teaching">
     <h2>Teaching</h2>
-    <p style="margin-bottom:18px; color: var(--muted); font-size:0.85rem;">
+    <p style="margin-bottom:18px; color: var(--muted); font-size: var(--fs-sm);">
       Teaching Assistant — Paris-Panthéon-Assas University
     </p>
 
@@ -389,6 +384,7 @@
   <!-- ── PRESENTATIONS ── -->
   <section id="awards">
     <h2>Presentations</h2>
+
     <div class="award-entry">
       <div class="award-title">FAEE PhD Students Workshop</div>
       <div class="award-meta">French Association of Energy Economists — Grenoble, France, 2025</div>
@@ -404,5 +400,8 @@
       <div class="award-meta">Aussois, France, 2025</div>
     </div>
 
-    <div class="award-entry">
-      <div class
+  </section>
+
+</main>
+</body>
+</html>
