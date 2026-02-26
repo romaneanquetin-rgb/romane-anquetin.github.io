@@ -12,11 +12,11 @@
       --muted      : #6b6b6b;
       --border     : #dde4df;
       --sidebar-w  : 360px;
-      --link-color : #c95f1e;   /* orange */
+      --link-color : #c95f1e;
 
       --fs-xl : 1.45rem;
       --fs-md : 0.95rem;
-      --fs-sm : 0.88rem;   /* was 0.82rem — légèrement grossi */
+      --fs-sm : 0.88rem;
       --fs-xs : 0.72rem;
 
       --serif : 'Playfair Display', Georgia, serif;
@@ -35,7 +35,6 @@
       align-items: flex-start;
     }
 
-    /* ── SIDEBAR WRAPPER ── */
     #sidebar-wrapper {
       width: calc(var(--sidebar-w) + 40px);
       min-width: calc(var(--sidebar-w) + 40px);
@@ -46,7 +45,6 @@
       overflow-y: auto;
     }
 
-    /* ── SIDEBAR ── */
     #sidebar {
       width: 100%;
       background: #3a5247;
@@ -59,7 +57,6 @@
       min-height: calc(100vh - 64px);
     }
 
-    /* photo grossie : 140px → 170px */
     #sidebar img.photo {
       width: 170px;
       height: 170px;
@@ -117,7 +114,6 @@
     }
     #sidebar nav a:hover { color: #ffffff; }
 
-    /* ── MAIN CONTENT ── */
     #main {
       flex: 1;
       padding: 56px 64px;
@@ -144,22 +140,14 @@
       margin-bottom: 12px;
     }
 
-    /* ── HYPERLIENS ORANGE ── */
-    section p a,
-    .pub-entry .pub-title a,
-    .pub-entry .pub-note a {
+    section p a {
       color: var(--link-color);
       text-decoration: none;
       border-bottom: 1px solid transparent;
-      transition: border-color 0.2s, color 0.2s;
+      transition: border-color 0.2s;
     }
-    section p a:hover,
-    .pub-entry .pub-title a:hover,
-    .pub-entry .pub-note a:hover {
-      border-color: var(--link-color);
-    }
+    section p a:hover { border-color: var(--link-color); }
 
-    /* ── PUBLICATION ENTRY ── */
     .pub-entry {
       margin-bottom: 28px;
       padding-bottom: 28px;
@@ -182,6 +170,14 @@
       font-weight: 500;
       margin-bottom: 8px;
     }
+
+    .pub-entry .pub-note a {
+      color: var(--link-color);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .pub-entry .pub-note a:hover { border-color: var(--link-color); }
 
     .abstract-toggle {
       font-family: var(--sans);
@@ -210,7 +206,6 @@
     }
     .abstract-text.open { display: block; }
 
-    /* ── TEACHING ── */
     .teaching-entry {
       display: grid;
       grid-template-columns: 60px 1fr;
@@ -231,7 +226,6 @@
       font-size: var(--fs-sm);
     }
 
-    /* ── PRESENTATIONS ── */
     .award-entry {
       margin-bottom: 16px;
       font-family: var(--sans);
@@ -241,7 +235,6 @@
     .award-entry .award-title { font-weight: 600; color: #3a5247; }
     .award-entry .award-meta  { color: var(--muted); font-size: var(--fs-sm); }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       body { flex-direction: column; }
       #sidebar-wrapper { width: 100%; height: auto; position: relative; padding: 16px; }
@@ -252,7 +245,6 @@
 </head>
 <body>
 
-<!-- ════════════════ SIDEBAR ════════════════ -->
 <div id="sidebar-wrapper">
 <aside id="sidebar">
 
@@ -282,10 +274,8 @@
 </aside>
 </div>
 
-<!-- ════════════════ MAIN CONTENT ════════════════ -->
 <main id="main">
 
-  <!-- ── ABOUT ── -->
   <section id="about">
     <h2>About</h2>
     <p>
@@ -304,7 +294,6 @@
     </p>
   </section>
 
-  <!-- ── CONTACT ── -->
   <section id="contact">
     <h2>Contact</h2>
     <p>
@@ -319,7 +308,6 @@
     </p>
   </section>
 
-  <!-- ── WORK IN PROGRESS ── -->
   <section id="work-in-progress">
     <h2>Work in Progress</h2>
 
@@ -338,7 +326,6 @@
 
   </section>
 
-  <!-- ── TEACHING ── -->
   <section id="teaching">
     <h2>Teaching</h2>
     <p style="margin-bottom:18px; color:#6b6b6b; font-size:var(--fs-sm);">
@@ -368,7 +355,6 @@
     </div>
   </section>
 
-  <!-- ── PRESENTATIONS ── -->
   <section id="awards">
     <h2>Presentations</h2>
 
@@ -376,7 +362,7 @@
       <div class="award-title">CRED-LEMMA PhD Seminar</div>
       <div class="award-meta">Paris Research Center in Law and Economics — Paris, France, 2025</div>
     </div>
-    
+
     <div class="award-entry">
       <div class="award-title">FAEE PhD Students Workshop</div>
       <div class="award-meta">French Association of Energy Economists — Grenoble, France, 2025</div>
