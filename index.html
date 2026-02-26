@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Romane Anquetin — Économiste</title>
+  <title>Romane Anquetin — Economist</title>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -108,7 +108,6 @@
       transition: color 0.2s;
       letter-spacing: 0.02em;
     }
-
     #sidebar nav a:hover { color: #fff; }
 
     #sidebar .contact-links {
@@ -134,9 +133,7 @@
       max-width: 800px;
     }
 
-    section {
-      margin-bottom: 52px;
-    }
+    section { margin-bottom: 52px; }
 
     section h2 {
       font-family: 'EB Garamond', serif;
@@ -179,19 +176,6 @@
     }
     .pub-entry .pub-title a:hover { border-color: var(--accent); color: var(--accent); }
 
-    .pub-entry .pub-meta {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-bottom: 6px;
-      font-style: italic;
-    }
-
-    .pub-entry .pub-coauthors {
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-
     .pub-entry .pub-note {
       font-size: 0.82rem;
       color: var(--accent);
@@ -215,10 +199,7 @@
       text-decoration: none;
       transition: all 0.2s;
     }
-    .pub-entry .pub-links a:hover {
-      background: var(--navy);
-      color: #fff;
-    }
+    .pub-entry .pub-links a:hover { background: var(--navy); color: #fff; }
 
     .abstract-toggle {
       font-size: 0.78rem;
@@ -245,14 +226,35 @@
     }
     .abstract-text.open { display: block; }
 
+    /* ── TEACHING TABLE ── */
+    .teaching-entry {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 4px 16px;
+      margin-bottom: 10px;
+      font-size: 0.88rem;
+    }
+    .teaching-entry .year {
+      color: var(--muted);
+      font-size: 0.8rem;
+      padding-top: 2px;
+    }
+    .teaching-entry .course { color: var(--text); line-height: 1.5; }
+    .teaching-entry .course em { color: var(--muted); font-style: normal; font-size: 0.8rem; }
+
+    /* ── AWARD ENTRY ── */
+    .award-entry {
+      margin-bottom: 16px;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+    .award-entry .award-title { font-weight: 500; color: var(--navy); }
+    .award-entry .award-meta { color: var(--muted); font-size: 0.8rem; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       body { flex-direction: column; }
-      #sidebar {
-        width: 100%;
-        position: relative;
-        height: auto;
-      }
+      #sidebar { width: 100%; position: relative; height: auto; }
       #main { padding: 32px 24px; }
     }
   </style>
@@ -262,146 +264,137 @@
 <!-- ════════════════ SIDEBAR ════════════════ -->
 <aside id="sidebar">
 
-  <!-- Remplace par une vraie photo : <img class="photo" src="photo.jpg" alt="Romane Anquetin"> -->
-  <div class="placeholder-photo">👤</div>
+  <!-- To add your photo, replace the div below with:
+       <img class="photo" src="photo.jpg" alt="Romane Anquetin"> -->
+  <img class="photo" src="photo.jpeg" alt="Romane Anquetin">
 
   <h1>Romane Anquetin</h1>
 
   <p class="position">
-    Doctorante en Économie<br>
-    [Ton université]<br>
-    [Ton département]
+    PhD Candidate in Economics<br>
+    Paris-Panthéon-Assas University<br>
+    CRED
   </p>
 
   <p class="shortbio">
-    Je suis économiste spécialisée dans [tes domaines de recherche]. 
-    Mes travaux portent sur [description courte de tes recherches].
+    I work on poverty, inequality, and energy policy using applied econometrics and behavioral economics.
   </p>
 
   <nav>
-    <a href="#bio">À propos</a>
-    <a href="#publications">Publications</a>
-    <a href="#working-papers">Working Papers</a>
-    <a href="#work-in-progress">En cours</a>
-    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="#work-in-progress">Work in Progress</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#awards">Presentations</a>
   </nav>
 
   <div class="contact-links">
-    <a href="mailto:ton.email@universite.fr">✉ ton.email@universite.fr</a>
-    <a href="CV_Anquetin.pdf" target="_blank">📄 Curriculum Vitae</a>
-    <!-- <a href="https://twitter.com/..." target="_blank">🐦 Twitter/X</a> -->
+    <a href="mailto:romane.anquetin@assas-universite.fr">✉ romane.anquetin@assas-universite.fr</a>
+    <a style="pointer-events:none; cursor:default;">📍 CRED, Paris-Panthéon-Assas<br>&nbsp;&nbsp;&nbsp;&nbsp;Paris, France</a>
+    <!-- To add your CV, upload a file named "CV_Anquetin.pdf" to GitHub, then uncomment the line below -->
+    <!-- <a href="CV_Anquetin.pdf" target="_blank">📄 Curriculum Vitae</a> -->
     <!-- <a href="https://scholar.google.com/..." target="_blank">🎓 Google Scholar</a> -->
   </div>
 
 </aside>
 
-<!-- ════════════════ CONTENU PRINCIPAL ════════════════ -->
+<!-- ════════════════ MAIN CONTENT ════════════════ -->
 <main id="main">
 
-  <!-- ── À PROPOS ── -->
-  <section id="bio">
-    <h2>À propos</h2>
+  <!-- ── ABOUT ── -->
+  <section id="about">
+    <h2>About</h2>
     <p>
-      Bienvenue ! Je suis doctorante en économie à [Ton université], 
-      sous la direction de [Nom du directeur de thèse].
+      I am a PhD candidate in Economics at the <a href="https://cred.u-paris2.fr/" target="_blank">Paris Center for Law and Economics (CRED)</a>,
+      Paris-Panthéon-Assas University, advised by <a href="http://chloelecoq.org/" target="_blank">Professor Chloé Le Coq</a>.
     </p>
     <p>
-      Mes recherches portent principalement sur [domaine 1] et [domaine 2]. 
-      Je m'intéresse particulièrement à [question de recherche centrale], 
-      en utilisant des méthodes [économétriques / expérimentales / théoriques].
+      My research lies at the intersection of <strong>poverty and inequality</strong>,
+      <strong>energy economics</strong>, and <strong>behavioral economics</strong>,
+      with a focus on the evaluation of public policies using applied econometrics.
     </p>
     <p>
-      Je serai sur le marché du travail académique en [année].
+      Prior to my PhD, I completed a Master's degree in Analysis and Policy in Economics
+      at Paris-Panthéon-Assas University and a Master's degree in Development Economics
+      at Paris 1 Panthéon-Sorbonne University, with a final year at Cairo University, Egypt.
     </p>
   </section>
 
-  <!-- ── PUBLICATIONS ── -->
-  <section id="publications">
-    <h2>Publications</h2>
-
-    <div class="pub-entry">
-      <div class="pub-title">
-        <a href="#">Titre de ton article publié</a>
-      </div>
-      <div class="pub-meta">Nom de la revue, Volume(Numéro), Année, pp. XX–XX</div>
-      <div class="pub-coauthors">Avec Coauteur A et Coauteur B</div>
-      <div class="pub-links">
-        <a href="#">PDF</a>
-        <a href="#">Version publiée</a>
-        <a href="#">Données</a>
-      </div>
-      <button class="abstract-toggle" onclick="this.nextElementSibling.classList.toggle('open'); this.textContent = this.nextElementSibling.classList.contains('open') ? 'Masquer le résumé' : 'Afficher le résumé'">Afficher le résumé</button>
-      <div class="abstract-text">
-        Résumé de l'article. Décris ici en quelques phrases la question de recherche, 
-        la méthode utilisée et les principaux résultats.
-      </div>
-    </div>
-
-  </section>
-
-  <!-- ── WORKING PAPERS ── -->
-  <section id="working-papers">
-    <h2>Working Papers</h2>
-
-    <div class="pub-entry">
-      <div class="pub-title">
-        <a href="#">Titre de ton working paper</a>
-      </div>
-      <div class="pub-coauthors">Avec Coauteur A</div>
-      <div class="pub-note">Soumis à [Nom de la revue]</div>
-      <div class="pub-links">
-        <a href="#">PDF</a>
-        <a href="#">SSRN</a>
-      </div>
-      <button class="abstract-toggle" onclick="this.nextElementSibling.classList.toggle('open'); this.textContent = this.nextElementSibling.classList.contains('open') ? 'Masquer le résumé' : 'Afficher le résumé'">Afficher le résumé</button>
-      <div class="abstract-text">
-        Résumé du working paper.
-      </div>
-    </div>
-
-    <div class="pub-entry">
-      <div class="pub-title">
-        <a href="#">Deuxième working paper</a>
-      </div>
-      <div class="pub-links">
-        <a href="#">PDF</a>
-      </div>
-      <button class="abstract-toggle" onclick="this.nextElementSibling.classList.toggle('open'); this.textContent = this.nextElementSibling.classList.contains('open') ? 'Masquer le résumé' : 'Afficher le résumé'">Afficher le résumé</button>
-      <div class="abstract-text">
-        Résumé du deuxième working paper.
-      </div>
-    </div>
-
-  </section>
-
-  <!-- ── TRAVAUX EN COURS ── -->
+  <!-- ── WORK IN PROGRESS ── -->
   <section id="work-in-progress">
-    <h2>Travaux en cours</h2>
+    <h2>Work in Progress</h2>
 
     <div class="pub-entry">
-      <div class="pub-title">Titre du projet en cours</div>
-      <div class="pub-coauthors">Avec Coauteur A et Coauteur B</div>
-      <div class="pub-note">Brouillon disponible sur demande</div>
-    </div>
-
-    <div class="pub-entry">
-      <div class="pub-title">Deuxième projet en cours</div>
+      <div class="pub-title">When Eligibility is Not Enough: Lessons from France's Energy Voucher Policy</div>
+      <div class="pub-note">Draft available — <a href="energy-voucher.pdf" target="_blank" style="color: var(--accent);">PDF</a></div>
+      <div class="pub-note" style="color: var(--muted); font-weight: 400;">🏆 <a href="https://www.faee.fr/en/2/id/109" target="_blank" style="color: var(--muted);">Best PhD Paper Award</a> — FAEE PhD Students Workshop, Grenoble, 2025</div>
+      <button class="abstract-toggle" onclick="this.nextElementSibling.classList.toggle('open'); this.textContent = this.nextElementSibling.classList.contains('open') ? 'Hide abstract' : 'Show abstract'">Show abstract</button>
+      <div class="abstract-text">
+        Incomplete take-up persists in means-tested programs, even when benefits are allocated automatically. This paper examines why eligible households do not use the energy voucher in France, which is sent directly to beneficiaries. The results show that the determinants of non-take-up differ across the income distribution through two effects. Among modest-income households, non-use is driven by a size effect. Take-up increases sharply when the voucher represents a larger share of household income, with a probability of use by up to 94 percentage points. Among the poorest households, non-use reflects a learning effect linked to administrative familiarity. Households who received the voucher the previous year are about 25 percentage points more likely to use it. Overall, take-up follows a non-linear pattern across income levels, reflecting the joint effect of administrative constraints and the relative value of the benefit.
+      </div>
     </div>
 
   </section>
 
-  <!-- ── CONTACT ── -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>
-      <strong>Email :</strong> <a href="mailto:ton.email@universite.fr">ton.email@universite.fr</a>
+
+
+  <!-- ── PRESENTATIONS ── -->
+  <section id="awards">
+    <h2>Presentations</h2>
+    <div class="award-entry">
+      <div class="award-title">FAEE PhD Students Workshop</div>
+      <div class="award-meta">French Association of Energy Economists — Grenoble, France, 2025</div>
+    </div>
+
+    <div class="award-entry">
+      <div class="award-title">Poster — Law, Economics, and Regulation Conference</div>
+      <div class="award-meta">CRED-HEC — Paris, France, 2025</div>
+    </div>
+
+    <div class="award-entry">
+      <div class="award-title">Poster — CNRS Thematic School on Public Policy Evaluation</div>
+      <div class="award-meta">Aussois, France, 2025</div>
+    </div>
+
+    <div class="award-entry">
+      <div class="award-title">CRED-LEMMA PhD Seminar</div>
+      <div class="award-meta">Paris, France, 2025</div>
+    </div>
+
+    <div class="award-entry">
+      <div class="award-title">German Institute for Economic Research (DIW)</div>
+      <div class="award-meta">Berlin, Germany, 2024</div>
+    </div>
+
+  </section>
+
+    <!-- ── TEACHING ── -->
+  <section id="teaching">
+    <h2>Teaching</h2>
+    <p style="margin-bottom:18px; color: var(--muted); font-size:0.85rem;">
+      Teaching Assistant — Paris-Panthéon-Assas University
     </p>
-    <p>
-      <strong>Adresse :</strong><br>
-      [Ton département]<br>
-      [Ton université]<br>
-      [Adresse postale]
-    </p>
+
+    <div class="teaching-entry">
+      <span class="year">2025–26</span>
+      <span class="course">
+        Analysis Microeconomics <em>— 1st year Bachelor in Economics</em><br>
+        Econometrics <em>— 3rd year Bachelor in Economics</em>
+      </span>
+    </div>
+
+    <div class="teaching-entry">
+      <span class="year">2024–25</span>
+      <span class="course">
+        Analysis Microeconomics <em>— 1st year Bachelor in Economics</em>
+      </span>
+    </div>
+
+    <div class="teaching-entry">
+      <span class="year">2023–24</span>
+      <span class="course">
+        Introduction to Macroeconomics <em>— 1st year Bachelor in Economics</em>
+      </span>
+    </div>
   </section>
 
 </main>
