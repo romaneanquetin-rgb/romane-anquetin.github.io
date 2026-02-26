@@ -6,35 +6,17 @@
   <title>Romane Anquetin — Economist</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
-    /*
-      TYPOGRAPHY SYSTEM
-      ─────────────────
-      Serif  : Playfair Display  → h1, h2
-      Sans   : Source Sans 3     → tout le reste
-
-      4 tailles :
-        --fs-xl : 1.45rem  → h1, h2
-        --fs-md : 0.95rem  → texte courant, pub-title
-        --fs-sm : 0.82rem  → méta, abstract, bio, nav
-        --fs-xs : 0.72rem  → petits labels
-
-      PALETTE SAUGE
-      ─────────────
-      Sidebar bg  : #3a5247  (vert sauge profond)
-      Titres/liens: #3a5247
-      Border      : #dde4df
-    */
-
     :root {
       --green-dark : #3a5247;
       --text       : #2c2c2c;
       --muted      : #6b6b6b;
       --border     : #dde4df;
       --sidebar-w  : 360px;
+      --link-color : #c95f1e;   /* orange */
 
       --fs-xl : 1.45rem;
       --fs-md : 0.95rem;
-      --fs-sm : 0.82rem;
+      --fs-sm : 0.88rem;   /* was 0.82rem — légèrement grossi */
       --fs-xs : 0.72rem;
 
       --serif : 'Playfair Display', Georgia, serif;
@@ -77,9 +59,10 @@
       min-height: calc(100vh - 64px);
     }
 
+    /* photo grossie : 140px → 170px */
     #sidebar img.photo {
-      width: 140px;
-      height: 140px;
+      width: 170px;
+      height: 170px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid rgba(255,255,255,0.18);
@@ -161,13 +144,20 @@
       margin-bottom: 12px;
     }
 
-    section p a {
-      color: #3a5247;
+    /* ── HYPERLIENS ORANGE ── */
+    section p a,
+    .pub-entry .pub-title a,
+    .pub-entry .pub-note a {
+      color: var(--link-color);
       text-decoration: none;
       border-bottom: 1px solid transparent;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, color 0.2s;
     }
-    section p a:hover { border-color: #3a5247; }
+    section p a:hover,
+    .pub-entry .pub-title a:hover,
+    .pub-entry .pub-note a:hover {
+      border-color: var(--link-color);
+    }
 
     /* ── PUBLICATION ENTRY ── */
     .pub-entry {
@@ -192,14 +182,6 @@
       font-weight: 500;
       margin-bottom: 8px;
     }
-
-    .pub-entry .pub-note a {
-      color: #3a5247;
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s;
-    }
-    .pub-entry .pub-note a:hover { border-color: #3a5247; }
 
     .abstract-toggle {
       font-family: var(--sans);
@@ -285,7 +267,7 @@
   </p>
 
   <p class="shortbio">
-    <strong>Research fields:</strong>strong> <br>
+    <strong>Research fields:</strong><br>
     poverty, inequality, and energy policy using applied econometrics and behavioral economics.
   </p>
 
@@ -345,7 +327,7 @@
       <div class="pub-title">When Eligibility is Not Enough: Lessons from France's Energy Voucher Policy</div>
       <div class="pub-note">Draft available — <a href="energy-voucher.pdf" target="_blank">PDF</a></div>
       <div class="pub-note" style="color:#6b6b6b; font-weight:400;">
-        <a href="https://www.faee.fr/en/2/id/109" target="_blank" style="color:#6b6b6b;">Best PhD Paper Award</a>
+        <a href="https://www.faee.fr/en/2/id/109" target="_blank">Best PhD Paper Award</a>
         — FAEE PhD Students Workshop, Grenoble, 2025
       </div>
       <button class="abstract-toggle" onclick="this.nextElementSibling.classList.toggle('open'); this.textContent = this.nextElementSibling.classList.contains('open') ? 'Hide abstract' : 'Show abstract'">Hide abstract</button>
