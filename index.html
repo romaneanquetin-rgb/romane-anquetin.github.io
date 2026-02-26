@@ -9,31 +9,36 @@
     /*
       TYPOGRAPHY SYSTEM
       ─────────────────
-      Serif  : Playfair Display  → h1, h2, section headings
-      Sans   : Source Sans 3     → everything else
+      Serif  : Playfair Display  → h1, h2
+      Sans   : Source Sans 3     → tout le reste
 
-      4 sizes only:
-        --fs-xl   : 1.45rem  → h1, h2
-        --fs-md   : 0.95rem  → body text, pub-title
-        --fs-sm   : 0.82rem  → meta, abstract, sidebar bio, nav
-        --fs-xs   : 0.72rem  → tags, badges, small labels
+      4 tailles :
+        --fs-xl : 1.45rem  → h1, h2
+        --fs-md : 0.95rem  → texte courant, pub-title
+        --fs-sm : 0.82rem  → méta, abstract, bio, nav
+        --fs-xs : 0.72rem  → petits labels
+
+      PALETTE SAUGE
+      ─────────────
+      Sidebar bg  : #3a5247  (vert sauge profond)
+      Titres/liens: #3a5247
+      Border      : #dde4df
     */
 
     :root {
-      --navy:   #3d5a4a;
-      --accent: #7a9e85;
-      --text:   #2c2c2c;
-      --muted:  #6b6b6b;
-      --border: #dde5df;
-      --sidebar-width: 360px;
+      --green-dark : #3a5247;
+      --text       : #2c2c2c;
+      --muted      : #6b6b6b;
+      --border     : #dde4df;
+      --sidebar-w  : 360px;
 
-      --fs-xl: 1.45rem;
-      --fs-md: 0.95rem;
-      --fs-sm: 0.82rem;
-      --fs-xs: 0.72rem;
+      --fs-xl : 1.45rem;
+      --fs-md : 0.95rem;
+      --fs-sm : 0.82rem;
+      --fs-xs : 0.72rem;
 
-      --serif: 'Playfair Display', Georgia, serif;
-      --sans:  'Source Sans 3', system-ui, sans-serif;
+      --serif : 'Playfair Display', Georgia, serif;
+      --sans  : 'Source Sans 3', system-ui, sans-serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -50,8 +55,8 @@
 
     /* ── SIDEBAR WRAPPER ── */
     #sidebar-wrapper {
-      width: calc(var(--sidebar-width) + 40px);
-      min-width: calc(var(--sidebar-width) + 40px);
+      width: calc(var(--sidebar-w) + 40px);
+      min-width: calc(var(--sidebar-w) + 40px);
       padding: 32px 20px;
       position: sticky;
       top: 0;
@@ -62,9 +67,9 @@
     /* ── SIDEBAR ── */
     #sidebar {
       width: 100%;
-      background: var(--navy);
-      color: #e8e4dc;
-      padding: 48px 28px 40px;
+      background: #3a5247;
+      color: #e8ede9;
+      padding: 48px 32px 40px;
       display: flex;
       flex-direction: column;
       gap: 28px;
@@ -77,7 +82,7 @@
       height: 140px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid rgba(255,255,255,0.15);
+      border: 3px solid rgba(255,255,255,0.18);
       display: block;
       margin: 0 auto;
     }
@@ -87,7 +92,7 @@
       font-size: var(--fs-xl);
       font-weight: 600;
       text-align: center;
-      color: #fff;
+      color: #ffffff;
       line-height: 1.3;
     }
 
@@ -96,7 +101,7 @@
       font-size: var(--fs-sm);
       font-weight: 300;
       text-align: center;
-      color: rgba(232,228,220,0.75);
+      color: rgba(232,237,233,0.75);
       line-height: 1.6;
     }
 
@@ -104,8 +109,8 @@
       font-family: var(--sans);
       font-size: var(--fs-sm);
       line-height: 1.7;
-      color: rgba(232,228,220,0.85);
-      border-top: 1px solid rgba(255,255,255,0.1);
+      color: rgba(232,237,233,0.85);
+      border-top: 1px solid rgba(255,255,255,0.12);
       padding-top: 20px;
     }
 
@@ -113,13 +118,13 @@
       display: flex;
       flex-direction: column;
       gap: 6px;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 1px solid rgba(255,255,255,0.12);
       padding-top: 20px;
     }
 
     #sidebar nav a {
       font-family: var(--sans);
-      color: rgba(232,228,220,0.7);
+      color: rgba(232,237,233,0.7);
       text-decoration: none;
       font-size: var(--fs-sm);
       font-weight: 400;
@@ -127,7 +132,7 @@
       transition: color 0.2s;
       letter-spacing: 0.02em;
     }
-    #sidebar nav a:hover { color: #fff; }
+    #sidebar nav a:hover { color: #ffffff; }
 
     /* ── MAIN CONTENT ── */
     #main {
@@ -142,8 +147,8 @@
       font-family: var(--serif);
       font-size: var(--fs-xl);
       font-weight: 600;
-      color: var(--navy);
-      border-bottom: 1px solid var(--border);
+      color: #3a5247;
+      border-bottom: 1px solid #dde4df;
       padding-bottom: 8px;
       margin-bottom: 24px;
     }
@@ -157,18 +162,18 @@
     }
 
     section p a {
-      color: #3d5a4a;
+      color: #3a5247;
       text-decoration: none;
       border-bottom: 1px solid transparent;
       transition: border-color 0.2s;
     }
-    section p a:hover { border-color: #3d5a4a; }
+    section p a:hover { border-color: #3a5247; }
 
     /* ── PUBLICATION ENTRY ── */
     .pub-entry {
       margin-bottom: 28px;
       padding-bottom: 28px;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid #dde4df;
     }
     .pub-entry:last-child { border-bottom: none; }
 
@@ -176,29 +181,29 @@
       font-family: var(--sans);
       font-size: var(--fs-md);
       font-weight: 600;
-      color: var(--navy);
+      color: #3a5247;
       margin-bottom: 4px;
     }
 
     .pub-entry .pub-note {
       font-family: var(--sans);
       font-size: var(--fs-sm);
-      color: #3d5a4a;
+      color: #3a5247;
       font-weight: 500;
       margin-bottom: 8px;
     }
 
     .pub-entry .pub-note a {
-      color: #3d5a4a;
+      color: #3a5247;
       text-decoration: none;
       border-bottom: 1px solid transparent;
       transition: border-color 0.2s;
     }
-    .pub-entry .pub-note a:hover { border-color: #3d5a4a; }
+    .pub-entry .pub-note a:hover { border-color: #3a5247; }
 
     .abstract-toggle {
       font-family: var(--sans);
-      font-size: var(--xs);
+      font-size: var(--fs-xs);
       color: var(--muted);
       cursor: pointer;
       background: none;
@@ -206,9 +211,8 @@
       padding: 0;
       text-decoration: underline;
       text-underline-offset: 3px;
-      font-size: var(--fs-xs);
     }
-    .abstract-toggle:hover { color: #3d5a4a; }
+    .abstract-toggle:hover { color: #3a5247; }
 
     .abstract-text {
       display: none;
@@ -218,8 +222,8 @@
       color: var(--muted);
       margin-top: 10px;
       padding: 12px 16px;
-      background: #fafafa;
-      border-left: 3px solid var(--border);
+      background: #f7f9f7;
+      border-left: 3px solid #c5d4c9;
       border-radius: 2px;
     }
     .abstract-text.open { display: block; }
@@ -245,15 +249,15 @@
       font-size: var(--fs-sm);
     }
 
-    /* ── AWARD ENTRY ── */
+    /* ── PRESENTATIONS ── */
     .award-entry {
       margin-bottom: 16px;
       font-family: var(--sans);
       font-size: var(--fs-md);
       line-height: 1.6;
     }
-    .award-entry .award-title { font-weight: 600; color: var(--navy); }
-    .award-entry .award-meta { color: var(--muted); font-size: var(--fs-sm); }
+    .award-entry .award-title { font-weight: 600; color: #3a5247; }
+    .award-entry .award-meta  { color: var(--muted); font-size: var(--fs-sm); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
@@ -339,8 +343,8 @@
     <div class="pub-entry">
       <div class="pub-title">When Eligibility is Not Enough: Lessons from France's Energy Voucher Policy</div>
       <div class="pub-note">Draft available — <a href="energy-voucher.pdf" target="_blank">PDF</a></div>
-      <div class="pub-note" style="color: var(--muted); font-weight: 400;">
-        <a href="https://www.faee.fr/en/2/id/109" target="_blank" style="color: var(--muted);">Best PhD Paper Award</a>
+      <div class="pub-note" style="color:#6b6b6b; font-weight:400;">
+        <a href="https://www.faee.fr/en/2/id/109" target="_blank" style="color:#6b6b6b;">Best PhD Paper Award</a>
         — FAEE PhD Students Workshop, Grenoble, 2025
       </div>
       <button class="abstract-toggle" onclick="this.nextElementSibling.classList.toggle('open'); this.textContent = this.nextElementSibling.classList.contains('open') ? 'Hide abstract' : 'Show abstract'">Hide abstract</button>
@@ -354,7 +358,7 @@
   <!-- ── TEACHING ── -->
   <section id="teaching">
     <h2>Teaching</h2>
-    <p style="margin-bottom:18px; color: var(--muted); font-size: var(--fs-sm);">
+    <p style="margin-bottom:18px; color:#6b6b6b; font-size:var(--fs-sm);">
       Teaching Assistant — Paris-Panthéon-Assas University
     </p>
 
